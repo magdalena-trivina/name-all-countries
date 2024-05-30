@@ -4,6 +4,7 @@ import QuizAnswers from "./modules/QuizAnswers";
 import QuizInput from "./modules/QuizInput";
 import QuizParent from "./modules/QuizParent";
 import {createContext} from "react";
+import {Grid} from "@mui/material";
 
 function App() {
 
@@ -14,9 +15,15 @@ function App() {
             <QuizParent quizContext={quizContext}>
                 <QuizHeader quizContext={quizContext}></QuizHeader>
                 <QuizInput quizContext={quizContext}></QuizInput>
-                <QuizAnswers quizContext={quizContext} type="Correct"></QuizAnswers>
-                <QuizAnswers quizContext={quizContext} type="Wrong"></QuizAnswers>
-                <QuizAnswers quizContext={quizContext} type="NotAnswered"></QuizAnswers>
+                <Grid container spacing={2}>
+                    <Grid item xs={6}>
+                        <QuizAnswers quizContext={quizContext} type="correct"></QuizAnswers>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <QuizAnswers quizContext={quizContext} type="wrong"></QuizAnswers>
+                    </Grid>
+                </Grid>
+                <QuizAnswers quizContext={quizContext} type="notAnswered"></QuizAnswers>
             </QuizParent>
         </div>
     );

@@ -1,4 +1,5 @@
 import {useState} from "react";
+import "./QuizParent.css";
 
 const QuizParent = ({quizContext, children}) => {
 
@@ -21,7 +22,7 @@ const QuizParent = ({quizContext, children}) => {
     const addToAnswers = (newAnswer) => { setAnswers([...answers, newAnswer]) }
 
     return (
-        <quizContext.Provider value={{ isStarted, setIsStarted, answers, setAnswers, addToAnswers, countries }}>
+        <quizContext.Provider className={`parent`} value={{ isStarted, setIsStarted, answers, setAnswers, addToAnswers, countries }}>
             {children}
         </quizContext.Provider>
     );

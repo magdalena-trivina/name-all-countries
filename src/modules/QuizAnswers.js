@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {useContext} from "react";
+import "./QuizAnsers.css"
 
 const QuizAnswers = ({quizContext, type}) => {
 
@@ -7,20 +8,23 @@ const QuizAnswers = ({quizContext, type}) => {
 
     const generateAnswers = () => {
         switch (String(type)) {
-            case "Correct":
-                return answers.filter((a) => countries.some((c) => (c === a))).map((a) => (<span>{a}</span>))
-            case "Wrong":
-                return answers.filter((a) => !countries.some((c) => (c === a))).map((a) => (<span>{a}</span>))
-            case "NotAnswered":
+            case "correct":
+                return answers.filter((a) => countries.some((c) =>
+                    (c.toUpperCase() === a.toUpperCase()))).map((a) => (<div><span>{a}</span><br/></div>))
+            case "wrong":
+                return answers.filter((a) => !countries.some((c) =>
+                    (c.toUpperCase() === a.toUpperCase()))).map((a) => (<div><span>{a}</span><br/></div>))
+            case "notAnswered":
                 if(isStarted || answers.length === 0)
                     return [];
-                return countries.filter((a) => !answers.some((c) => (c === a))).map((a) => (<span>{a}</span>))
+                return countries.filter((a) => !answers.some((c) =>
+                    (c.toUpperCase() === a.toUpperCase()))).map((a) => (<div><span>{a}</span><br/></div>))
             default:
                 return [];
         }
     }
 
-    return (<div style={{height: 400, width: '100%'}}>{generateAnswers()}</div>);
+    return (isStarted? <div className={`${type}-answer`}>{generateAnswers()}</div> : <></>);
 }
 
 export default QuizAnswers;
