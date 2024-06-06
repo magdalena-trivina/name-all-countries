@@ -15,13 +15,15 @@ function App() {
             <QuizParent quizContext={quizContext}>
                 <QuizHeader quizContext={quizContext}></QuizHeader>
                 <QuizInput quizContext={quizContext}></QuizInput>
-                <Grid container spacing={2}>
-                    <Grid item xs={6}>
+                <Grid container spacing={1}>
+                    <Grid item xs={2}/>
+                    <Grid item xs={4}>
                         <QuizAnswers quizContext={quizContext} type="correct"></QuizAnswers>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={4}>
                         <QuizAnswers quizContext={quizContext} type="wrong"></QuizAnswers>
                     </Grid>
+                    <Grid item xs={2}/>
                 </Grid>
                 <QuizAnswers quizContext={quizContext} type="notAnswered"></QuizAnswers>
             </QuizParent>

@@ -1,12 +1,16 @@
 .correct-answer{
     background : #b7ed73;
-    margin: 1rem;
+    margin: 5rem 1rem 1rem 1rem;
+    padding: 0.2rem;
+    font-size: 1.2rem;
     border-radius: 10px;
 }
 
 .wrong-answer{
     background : #6acff3;
-    margin: 1rem;
+    margin: 5rem 1rem 1rem 1rem;
+    padding: 0.2rem;
+    font-size: 1.2rem;
     border-radius: 10px;
 }
 

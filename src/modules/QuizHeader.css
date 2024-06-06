@@ -1,11 +1,18 @@
 .header{
     font-size: 1.5rem;
     color: #333;
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .title{
     font-family: fantasy;
     font-size: 3rem;
     padding: 10px;
+}
+
+.logo{
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    margin-top: 2rem
 }
